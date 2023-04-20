@@ -1,0 +1,18 @@
+export default {
+  COLORS: {
+    BACKGROUND_BLACK: "#0D0C0F",
+    BACKGROUND_DARK: "#1C1B1E",
+    BACKGROUND_GRAY: "#262529",
+    BACKGROUND_PINKISH: "rgba(255, 133, 155, 0.05)",
+
+    BLACK: "#312E38;",
+    DARK_BLACK: "#0D0C0F",
+    GRAY: "#948F99;",
+    DARK_GRAY: "#3E3B47;",
+    LIGHT_GRAY: "#CAC4CF;",
+    PINK: "#FF859B",
+    WHITE: "#F4EDE8",
+    WHITE_WHITE: "FFFFFF"
+
+  }
+}
