@@ -21,6 +21,8 @@ body, input, button, textarea {
   font-size: 1.6rem;
   outline: none;
   font-family: 'Roboto Slab', serif;
+
+  -web-kit-font-smoothing: antialiased;
 }
 
 a {
