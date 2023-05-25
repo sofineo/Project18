@@ -6,10 +6,10 @@ import avatar_placeholder from '../../assets/avatar_placeholder.svg'
 import { useState } from "react";
 
 
-export function Header(){
-  const [search, setSearch] = useState("")
+export function Header({ sendSearchValue }){
   const { signOut, user } = useAuth()
   const navigate = useNavigate()
+  const [search, setSearch] = useState('')
 
   const avatarUrl = user.avatar ? `${api.defaults.baseURL}files/${user.avatar}` : avatar_placeholder
 
@@ -18,8 +18,11 @@ export function Header(){
     navigate("/")
   }
 
-  function handleSearch() {
-    return search
+  function handleSearchValue(event) {
+    const newSearch = event.target.value
+    setSearch(newSearch)
+    sendSearchValue(newSearch)
+
   }
 
   return(
@@ -28,13 +31,12 @@ export function Header(){
       <Link to="/">RockeatMovies</Link>
       </h1>
 
-
     <label htmlFor=""></label>
     <input 
     type="text" 
     placeholder="Pesquisar pelo título"
     value={search}
-    onChange={e => setSearch(e.target.value)}
+    onChange={handleSearchValue}
     />
 
     <Profile>

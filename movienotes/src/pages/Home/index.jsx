@@ -8,23 +8,18 @@ import { useEffect } from "react";
 import { useState } from "react";
 
 export function Home(){
-  const [search, setSearch] = useState("")
+  const [search, setSearch] = useState('')
   const [notes, setNotes] = useState([])
 
-  const {handleSearch} = Header()
+  function handleSearch(search) {
+    setSearch(search)
+  }
 
-
-
-  useEffect(() => {
-    setSearch(handleSearch)
-    setNotes()
   console.log(search)
-
-  }, [search])
 
   return(
     <Container>
-      <Header />
+      <Header sendSearchValue={handleSearch}/>
       <div className="content">
       <header>
         <h1>Meus filmes</h1>
