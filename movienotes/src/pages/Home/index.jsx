@@ -43,7 +43,7 @@ export function Home(){
 
       <div className="notes">
         {
-          notes.maps(note => (
+          notes.map(note => (
             <Note 
             key={String(note.id)}
             data={note}
