@@ -22,7 +22,6 @@ export function Header({ sendSearchValue }){
     const newSearch = event.target.value
     setSearch(newSearch)
     sendSearchValue(newSearch)
-
   }
 
   return(
