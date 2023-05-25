@@ -9,10 +9,11 @@ export function TagItem({ isNew, value, onClick, ...rest}){
     >
       <input 
       type="text"
-      value={value} 
+      value={value}
       readOnly={!isNew}
       className={isNew ? 'input-add' : 'input-delete'}
       placeholder={isNew ? "Novo marcador" : ""}
+      {...rest}
       />
 
       <button

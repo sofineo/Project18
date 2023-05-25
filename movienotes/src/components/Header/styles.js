@@ -59,7 +59,7 @@ export const Profile = styled.div`
         }
       }
       
-      a {
+      button {
         font-weight: 400;
         font-size: 14px;
         line-height: 18px;

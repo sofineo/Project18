@@ -2,7 +2,6 @@ import styled from "styled-components";
 
 export const Container = styled.div`
 height: 5.6rem;
-
 display: flex;
 align-items: center;
 justify-content: center;
@@ -28,12 +27,13 @@ border-radius: 1rem;
 }
 
 > .input-delete {
-  width: 5rem;
   color: #FFFFFF;
+  width: 12rem;
 }
 
 > .input-add{
   width:12rem;
+  color: #FFFFFF;
 }
 
 > button {

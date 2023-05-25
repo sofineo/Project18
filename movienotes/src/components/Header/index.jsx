@@ -1,8 +1,27 @@
 import { Container, Profile } from "./styles";
-import { Link } from 'react-router-dom'
+import { Link, useNavigate } from 'react-router-dom'
+import { useAuth } from "../../hooks/auth"; 
+import { api } from "../../services/api";
+import avatar_placeholder from '../../assets/avatar_placeholder.svg'
+import { useState } from "react";
 
 
 export function Header(){
+  const [search, setSearch] = useState("")
+  const { signOut, user } = useAuth()
+  const navigate = useNavigate()
+
+  const avatarUrl = user.avatar ? `${api.defaults.baseURL}files/${user.avatar}` : avatar_placeholder
+
+  function handleSignOut(){
+    signOut()
+    navigate("/")
+  }
+
+  function handleSearch() {
+    return search
+  }
+
   return(
   <Container>
     <h1>
@@ -14,22 +33,27 @@ export function Header(){
     <input 
     type="text" 
     placeholder="Pesquisar pelo título"
+    value={search}
+    onChange={e => setSearch(e.target.value)}
     />
 
     <Profile>
       <div className="profile">
       <h2>
         <Link to="/profile">
-        Sofia Neo
+        {user.name}
         </Link>
         </h2>
-      <Link to="/" >
+        <button
+        type="button"
+        onClick={handleSignOut}
+        >
         sair
-        </Link>
+        </button>
       </div>
       <Link to="/profile">
       <img 
-      src="https://github.com/sofineo.png"
+      src={avatarUrl}
       alt="Foto do usuário" />
       </Link>
     </Profile>
