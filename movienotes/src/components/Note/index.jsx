@@ -4,7 +4,7 @@ import { Stars } from '../Stars'
 
 export function Note({ data, ...rest}){
   return(
-    <Container>
+    <Container {...rest}>
       <h1>{data.title}</h1>
 
       <Stars rating={data.rating}

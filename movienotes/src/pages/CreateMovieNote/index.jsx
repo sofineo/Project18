@@ -31,6 +31,9 @@ export function CreateMovieNote(){
   }
 
   function handleAddTag(){
+    if(!newTag) {
+      return
+    }
     setTags(prevState => [...prevState, newTag])
     setNewTag("")
   }

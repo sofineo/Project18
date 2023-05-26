@@ -52,6 +52,8 @@ export function Profile(){
 
     await updateProfile({ user: userUpdated, avatarFile })
     setNothingChanged(true)
+    setPassword("")
+    setNewPassword("")
   }  
 
 
@@ -108,11 +110,13 @@ export function Profile(){
       type="Password"
       icon={ FiLock }
       placeholder="Senha atual"
+      value={password}
       onChange={e => setPassword(e.target.value)}
       />
       <Input 
       placeholder="Senha nova"
       type="Password"
+      value={newPassword}
       onChange={e => setNewPassword(e.target.value)}
       icon={ FiLock }
       />

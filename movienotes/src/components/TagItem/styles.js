@@ -28,7 +28,8 @@ border-radius: 1rem;
 
 > .input-delete {
   color: #FFFFFF;
-  width: 12rem;
+  width: fit-content;
+  text-align: center;
 }
 
 > .input-add{
