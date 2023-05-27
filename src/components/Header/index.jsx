@@ -11,7 +11,7 @@ export function Header({ sendSearchValue }){
   const navigate = useNavigate()
   const [search, setSearch] = useState('')
 
-  const avatarUrl = user.avatar ? `${api.defaults.baseURL}files/${user.avatar}` : avatar_placeholder
+  const avatarUrl = user.avatar ? `${api.defaults.baseURL}/files/${user.avatar}` : avatar_placeholder
 
   function handleSignOut(){
     signOut()
